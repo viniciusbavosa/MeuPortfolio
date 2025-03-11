@@ -1,3 +1,14 @@
+.home-bttn {
+  background-color: #ffffff20;
+  padding: 1rem;
+  border-radius: 14px;
+  transition: transform 200ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
 .home-img-wrapper {
   display: grid;
   isolation: isolate;
