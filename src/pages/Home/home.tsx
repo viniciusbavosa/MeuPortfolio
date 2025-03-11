@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Vinicius from "~/assets/imgs/Image.webp";
 import YellowBG from "~/assets/imgs/YellowCircle.webp";
+import ToTheMoon from "~/components/to-the-moon-icon/to-the-moon";
 
 export default function Home() {
   const mainTitle = "Vinícius Bavosa. Desenvolvedor Web.";
@@ -27,6 +28,9 @@ export default function Home() {
           <Link to={"/contact"} className="home-bttn">
             Entre em contato
           </Link>
+          <div className="home-icon-wrapper">
+            <ToTheMoon />
+          </div>
           <div className="home-img-wrapper" tabIndex={0}>
             <div className="home-img-text-wrapper">
               {myInfo.map((info, index) => (

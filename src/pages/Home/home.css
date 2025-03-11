@@ -3,12 +3,18 @@
   padding: 1rem;
   border-radius: 14px;
   transition: transform 200ms ease-in-out;
+  font-weight: 500;
 
   &:hover,
   &:focus {
     transform: scale(1.2);
   }
 }
+
+.home-icon-wrapper {
+  display: none;
+}
+
 .home-img-wrapper {
   display: grid;
   isolation: isolate;
@@ -96,5 +102,30 @@
       transform: translateY(5px);
       opacity: initial;
     }
+  }
+}
+
+@container body (width < 426px) {
+  .home-icon-wrapper {
+    display: block;
+    min-block-size: min-content;
+  }
+
+  .twinkle {
+    animation: twinkle 5s infinite ease-in-out;
+  }
+
+  .home-img-wrapper {
+    display: none;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
   }
 }
