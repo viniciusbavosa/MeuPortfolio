@@ -15,7 +15,7 @@ export default function Creations() {
       description:
         "Desenvolvi o front end para a empresa Kartus utilizando React, TypeScript e CSS. Esse foi meu primeiro trabalho desenvolvido para outra pessoa, no qual fui responsável por implementar o design do figma, criar componentes reutilizáveis, otimizar o carregamento de páginas e melhorar a acessibilidade. ",
       image: Kartus,
-      path: "",
+      path: "https://github.com/viniciusbavosa/Kartus",
       alt: "Um quadrado de bordas arredondadas, plano de fundo composto por um gradiente roxo-azulado com o nome Kartus à frente.",
     },
     {
