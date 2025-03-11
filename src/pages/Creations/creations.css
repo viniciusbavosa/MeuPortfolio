@@ -37,6 +37,7 @@
   padding: 1rem;
   inset: 0;
   opacity: 0;
+  border-radius: 14px;
   transition: opacity 200ms ease-in;
   overflow: clip;
 
@@ -62,13 +63,18 @@
     color: black;
     transition: transform 200ms ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: scale(1.1);
     }
   }
 }
 
 li:hover .creation-img-caption {
+  opacity: 1;
+}
+
+li:focus .creation-img-caption {
   opacity: 1;
 }
 

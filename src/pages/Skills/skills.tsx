@@ -39,7 +39,7 @@ export default function Skills() {
           <h2 className="section-subtitle creations-subtitle">{subtitle}</h2>
           <ul className="skills-wrapper">
             {skills.map((s, index) => (
-              <li key={index} className="skill-item">
+              <li key={index} tabIndex={0} className="skill-item">
                 {s}
               </li>
             ))}

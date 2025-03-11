@@ -143,7 +143,7 @@ li {
 
 .section-subtitle {
   max-inline-size: min(50%, var(--measure));
-  padding: 1rem;
+  padding-block: 1rem;
   text-align: center;
   font-size: clamp(1.125rem, 5vw, 2rem);
   font-weight: 300;
@@ -152,5 +152,9 @@ li {
 @container body (width < 950px) {
   .section-title {
     margin-block-start: 1rem;
+  }
+
+  .section-subtitle {
+    display: flex;
   }
 }

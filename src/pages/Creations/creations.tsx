@@ -62,7 +62,7 @@ export default function Creations() {
           <div className="creations-list-wrapper">
             <ul>
               {projects.map((p, index) => (
-                <li key={index} className="creation-item">
+                <li key={index} tabIndex={0} className="creation-item">
                   <figure className="creation-img-wrapper">
                     <picture>
                       <img
