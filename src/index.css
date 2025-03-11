@@ -1,0 +1,157 @@
+@import "components/button/button.css";
+@import "components/header/header.css";
+@import "components/footer/footer.css";
+@import "pages/Home/home.css";
+@import "pages/Creations/creations.css";
+@import "pages/Skills/skills.css";
+@import "pages/Contact/contact.css";
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* *,
+*::before,
+*::after {
+  outline: 2px solid lime;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit; /* Get rid of all font sizes and heights */
+}
+
+:root {
+  --background-primary-color: #121212;
+  --primary-color: #ffbf00;
+  --text-primary-color: white;
+
+  --header-background-color: #d9d9d910;
+
+  --measure: 75ch;
+  --small-measure: 20ch;
+  --half-measure: 35ch;
+  --long-measure: 90ch;
+
+  --section-padding: 4rem;
+}
+
+html {
+  hanging-punctuation: first last; /* Not supported in Chrome */
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--background-primary-color);
+  font-family: "Fira Sans", sans-serif;
+  line-height: 1.5;
+  color: var(--text-primary-color);
+  padding: 1rem;
+  container: body / inline-size;
+}
+
+/* Media responsive */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty; /* Prevents orphans on lines */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+/* Utility Classes */
+
+.section-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--section-padding);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.section-subtitle {
+  max-inline-size: min(50%, var(--measure));
+  padding: 1rem;
+  text-align: center;
+  font-size: clamp(1.125rem, 5vw, 2rem);
+  font-weight: 300;
+}
+
+@container body (width < 950px) {
+  .section-title {
+    margin-block-start: 1rem;
+  }
+}

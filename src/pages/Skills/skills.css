@@ -1,0 +1,29 @@
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-inline-size: min(50%, var(--long-measure));
+  max-block-size: min(80vw, 500px);
+  text-align: center;
+  padding: 1rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.skill-item {
+  transition: 200ms ease-in;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    color: var(--primary-color);
+  }
+}
+
+@container body (width < 890px) {
+  .skills-content-wrapper {
+    text-align: center;
+  }
+}

@@ -1,0 +1,89 @@
+.home-img-wrapper {
+  display: grid;
+  isolation: isolate;
+  place-items: center;
+  grid-template-areas: "stack";
+  margin-block-start: 2rem;
+  min-inline-size: min(5vw, 400px);
+}
+
+.home-img-text-wrapper {
+  position: relative;
+  grid-area: stack;
+  color: black;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 200ms ease-in 400ms;
+  z-index: 1;
+
+  .home-img-name {
+    font-size: 2rem;
+  }
+
+  .home-img-age,
+  .home-img-state {
+    font-size: 1.5rem;
+  }
+
+  .home-img-hobbies {
+    max-inline-size: var(--small-measure);
+  }
+}
+
+.home-img-bg {
+  grid-area: stack;
+}
+
+.home-img-vinicius {
+  grid-area: stack;
+  transform: translateY(5px);
+  transition: 500ms 200ms ease-in-out;
+  z-index: 2;
+
+  &:hover {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/*
+  Seleciona o elemento '.home-img-text-wrapper'
+  quando '.home-img-wrapper' estiver com o estado hover ativo.
+*/
+
+.home-img-wrapper:hover :where(.home-img-text-wrapper) {
+  opacity: 1;
+}
+
+/*
+  Seleciona o elemento '.home-img-vinicius' e
+  '.home-img-text-wrapper' quando '.home-img-wrapper'
+  estiver focado.
+*/
+.home-img-wrapper:focus :where(.home-img-vinicius) {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.home-img-wrapper:focus :where(.home-img-text-wrapper) {
+  opacity: 1;
+}
+
+@container body (width < 890px) {
+  .home-content-wrapper {
+    text-align: center;
+  }
+
+  .home-img-text-wrapper {
+    display: none;
+  }
+
+  .home-img-vinicius {
+    transition: none;
+
+    &:hover {
+      transform: translateY(5px);
+      opacity: initial;
+    }
+  }
+}

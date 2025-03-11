@@ -1,0 +1,15 @@
+.contact-list-wrapper {
+  padding: 1rem;
+  justify-items: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.contact-item {
+  transition: 200ms ease-in;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    color: var(--primary-color);
+  }
+}
