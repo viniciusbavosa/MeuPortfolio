@@ -3,6 +3,9 @@ import Alloy from "~/assets/imgs/AlloyPreview.webp";
 import Tale from "~/assets/imgs/TaleElementsPreview.webp";
 import Soluciona from "~/assets/imgs/SolucionaPlusPreview.webp";
 import Tarefando from "~/assets/imgs/TarefandoPreview.webp";
+import ArrowLeft from "~/components/arrow-left-icon/arrowLeft";
+import ArrowRight from "~/components/arrow-right-icon/arrowRight";
+import useCreation from "~/hooks/useCreation/useCreation";
 
 export default function Creations() {
   const mainTitle = "Meus projetos e criações";
@@ -13,7 +16,7 @@ export default function Creations() {
     {
       name: "Kartus",
       description:
-        "Desenvolvi o front end para a empresa Kartus utilizando React, TypeScript e CSS. Esse foi meu primeiro trabalho desenvolvido para outra pessoa, no qual fui responsável por implementar o design do figma, criar componentes reutilizáveis, otimizar o carregamento de páginas e melhorar a acessibilidade. ",
+        "Desenvolvi o front-end da Kartus com React, TypeScript e CSS. Implementei o design do Figma, criei componentes reutilizáveis, otimizei o carregamento e melhorei a acessibilidade. Foi meu primeiro trabalho para outra pessoa. ",
       image: Kartus,
       path: "https://github.com/viniciusbavosa/Kartus",
       alt: "Um quadrado de bordas arredondadas, plano de fundo composto por um gradiente roxo-azulado com o nome Kartus à frente.",
@@ -52,6 +55,9 @@ export default function Creations() {
     },
   ];
 
+  const { carouselRef, itemRef, handleLeftClick, handleRightClick } =
+    useCreation();
+
   return (
     <>
       <section className="creations-section">
@@ -60,9 +66,19 @@ export default function Creations() {
           <h2 className="section-subtitle creations-subtitle">{subtitle}</h2>
 
           <div className="creations-list-wrapper">
-            <ul>
+            <div className="arrow-left-wrapper">
+              <button className="arrow-left-bttn" onClick={handleLeftClick}>
+                <ArrowLeft />
+              </button>
+            </div>
+            <ul className="carousel" ref={carouselRef}>
               {projects.map((p, index) => (
-                <li key={index} tabIndex={0} className="creation-item">
+                <li
+                  key={index}
+                  tabIndex={0}
+                  className="creation-item"
+                  ref={itemRef}
+                >
                   <figure className="creation-img-wrapper">
                     <picture>
                       <img
@@ -90,6 +106,11 @@ export default function Creations() {
                 </li>
               ))}
             </ul>
+            <div className="arrow-right-wrapper">
+              <button className="arrow-left-bttn" onClick={handleRightClick}>
+                <ArrowRight />
+              </button>
+            </div>
           </div>
         </div>
       </section>

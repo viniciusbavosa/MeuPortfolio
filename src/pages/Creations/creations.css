@@ -1,5 +1,8 @@
 .creations-list-wrapper {
-  max-inline-size: min(50%, var(--long-measure));
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-inline-size: 100ch;
   margin-block-start: 3rem;
 }
 
@@ -11,7 +14,13 @@
   margin-block-end: 1rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.creations-list-wrapper ul::-webkit-scrollbar {
+  display: none;
 }
 
 .creation-item {
@@ -21,7 +30,7 @@
 }
 
 .creation-img-wrapper {
-  inline-size: fit-content;
+  max-inline-size: fit-content;
   margin: 0 auto;
   position: relative;
 }
@@ -31,8 +40,9 @@
 }
 
 .creation-img-caption {
+  min-inline-size: 90%;
+  min-block-size: 90%;
   background-color: hsla(0, 0%, 10%, 0.8);
-  text-align: justify;
   position: absolute;
   padding: 1rem;
   inset: 0;
@@ -40,25 +50,28 @@
   border-radius: 14px;
   transition: opacity 200ms ease-in;
   overflow: clip;
+  font-size: clamp(10px, 1.4vw, 1rem);
+  text-align: justify;
+  text-overflow: ellipsis;
+  text-rendering: optimizeLegibility;
 
   & > * + * {
-    margin-block-start: 1rem;
+    margin-block-start: 1em;
   }
 
   .creation-title {
-    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-size: clamp(1rem, 2vw, 2.5rem);
   }
 
   .creation-description {
-    font-size: clamp(10px, 3vw, 1.2rem);
+    font-size: clamp(10px, 1.4vw, 1rem);
   }
 
   .creation-caption-link {
     display: inline-block;
     font-weight: 500;
-    border: none;
     border-radius: 14px;
-    padding: 1rem;
+    padding: 0.5em 1em;
     background-color: var(--primary-color);
     color: black;
     transition: transform 200ms ease;
@@ -78,15 +91,36 @@ li:focus .creation-img-caption {
   opacity: 1;
 }
 
-@container body (width < 1690px) {
-  .creations-list-wrapper {
-    max-inline-size: fit-content;
+.arrow-left-bttn,
+.arrow-right-bttn {
+  cursor: pointer;
+}
 
-    padding-inline: 1rem;
-  }
+@container body (width < 1400px) {
   .creations-list-wrapper ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .creation-img {
+    inline-size: 27vw;
+    block-size: 27vw;
+  }
+
+  .arrow-left-wrapper,
+  .arrow-right-wrapper {
+    display: none;
+  }
+}
+
+@container body (width < 690px) {
+  .creation-img-caption {
+    text-align: center;
+    align-content: center;
+  }
+
+  .creation-description {
+    display: none;
   }
 }
 
