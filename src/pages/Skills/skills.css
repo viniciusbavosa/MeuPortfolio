@@ -1,18 +1,20 @@
 .skills-wrapper {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
-  max-inline-size: min(50%, var(--long-measure));
-  max-block-size: min(80vw, 500px);
+
+  background-color: #ffffff20;
+  border-radius: 14px;
+  padding: 1.5rem;
+
+  max-inline-size: min(80%, var(--long-measure));
   text-align: center;
-  padding: 1rem;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scroll-behavior: smooth;
+
+  margin-block-start: max(5vw, 1rem);
 }
 
 .skill-item {
+  flex: 1 1 fit-content;
   transition: 200ms ease-in;
 
   &:hover,

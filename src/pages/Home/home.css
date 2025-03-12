@@ -11,10 +11,6 @@
   }
 }
 
-.home-icon-wrapper {
-  display: none;
-}
-
 .home-img-wrapper {
   display: grid;
   isolation: isolate;
@@ -34,25 +30,31 @@
   z-index: 1;
 
   .home-img-name {
-    font-size: 2rem;
+    font-size: clamp(1rem, 1vw, 3rem);
   }
 
   .home-img-age,
   .home-img-state {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1vw, 2.3rem);
   }
 
   .home-img-hobbies {
     max-inline-size: var(--small-measure);
+    font-size: clamp(14px, 0.5vw, 2.3rem);
   }
 }
 
 .home-img-bg {
   grid-area: stack;
+  inline-size: clamp(200px, 25vw, 400px);
+  block-size: clamp(200px, 25vw, 400px);
 }
 
 .home-img-vinicius {
   grid-area: stack;
+  inline-size: clamp(200px, 25vw, 400px);
+  block-size: clamp(200px, 25vw, 400px);
+
   transform: translateY(5px);
   transition: 500ms 200ms ease-in-out;
   z-index: 2;
@@ -97,10 +99,11 @@
 
   .home-img-vinicius {
     transition: none;
+    opacity: 1;
 
     &:hover {
-      transform: translateY(5px);
-      opacity: initial;
+      transform: rotate(0) translateY(5px);
+      opacity: 1;
     }
   }
 

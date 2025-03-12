@@ -1,7 +1,7 @@
 export function Contact() {
   const mainTitle = "Entre em contato comigo!";
   const subtitle =
-    "Você pode me mandar uma mensagem através dos seguintes meios de comunicação.";
+    "Você pode me mandar uma mensagem através das redes sociais.";
 
   const social = [
     {

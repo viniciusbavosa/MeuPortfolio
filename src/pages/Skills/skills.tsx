@@ -20,6 +20,7 @@ export default function Skills() {
     "Shadcui",
     "PostCSS",
     "NPM",
+    "Arquitetura REST",
     "API Restful",
     "Protocolo HTTP",
     "CORS",

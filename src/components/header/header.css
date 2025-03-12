@@ -83,3 +83,9 @@
     border-end-end-radius: 24px;
   }
 }
+
+@container body (max-width: 320px) {
+  .nav-items-wrapper {
+    font-size: 10px;
+  }
+}

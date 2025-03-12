@@ -95,7 +95,7 @@ picture,
 svg,
 video {
   display: block;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 h1,
@@ -119,6 +119,11 @@ a {
 
 li {
   list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
