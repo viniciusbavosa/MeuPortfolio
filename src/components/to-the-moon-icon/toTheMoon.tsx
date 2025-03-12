@@ -46,6 +46,7 @@ export default function ToTheMoon() {
           opacity="0.1"
         >
           <ellipse
+            className="twinkle"
             id="Ellipse_614"
             data-name="Ellipse 614"
             cx="80"
@@ -62,6 +63,7 @@ export default function ToTheMoon() {
           opacity="0.1"
         >
           <ellipse
+            className="twinkle"
             id="Ellipse_615"
             data-name="Ellipse 615"
             cx="80"
@@ -78,6 +80,7 @@ export default function ToTheMoon() {
           opacity="0.1"
         >
           <ellipse
+            className="twinkle"
             id="Ellipse_616"
             data-name="Ellipse 616"
             cx="72"
@@ -94,6 +97,7 @@ export default function ToTheMoon() {
           opacity="0.1"
         >
           <ellipse
+            className="twinkle"
             id="Ellipse_617"
             data-name="Ellipse 617"
             cx="72"
@@ -287,6 +291,7 @@ export default function ToTheMoon() {
           fill="#f2f2f2"
         />
         <circle
+          className="twinkle"
           id="Ellipse_625"
           data-name="Ellipse 625"
           cx="4"
@@ -317,6 +322,7 @@ export default function ToTheMoon() {
           fill="#FFBF00"
         />
         <circle
+          className="twinkle"
           id="Ellipse_658"
           data-name="Ellipse 658"
           cx="7"

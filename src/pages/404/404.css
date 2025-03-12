@@ -1,0 +1,17 @@
+.twinkle {
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.twinkle:nth-child(even) {
+  animation: twinkle 3s infinite ease;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}

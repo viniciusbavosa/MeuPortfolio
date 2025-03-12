@@ -103,29 +103,9 @@
       opacity: initial;
     }
   }
-}
 
-@container body (width < 426px) {
-  .home-icon-wrapper {
-    display: block;
-    min-block-size: min-content;
-  }
-
-  .twinkle {
-    animation: twinkle 5s infinite ease-in-out;
-  }
-
-  .home-img-wrapper {
-    display: none;
-  }
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
+  .home-img-wrapper:focus :where(.home-img-vinicius) {
+    transform: rotate(0) translateY(5px);
     opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
   }
 }
