@@ -1,6 +1,7 @@
 import InstagramIcon from "~/components/instagram-icon/instagram";
 import LinkedinIcon from "~/components/linkedin-icon/linkedin";
 import GithubIcon from "~/components/github-icon/github";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const navLinks = [
@@ -47,9 +48,14 @@ export default function Header() {
           <ul className="nav-items-wrapper">
             {navLinks.map((l, i) => (
               <li key={i} className="nav-item">
-                <a href={l.path} tabIndex={0} className="nav-link">
+                <Link
+                  to={l.path}
+                  viewTransition
+                  tabIndex={0}
+                  className="nav-link"
+                >
                   {l.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
