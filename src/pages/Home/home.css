@@ -30,12 +30,12 @@
   z-index: 1;
 
   .home-img-name {
-    font-size: clamp(1rem, 1vw, 3rem);
+    font-size: clamp(1rem, 1.2vw, 3rem);
   }
 
   .home-img-age,
   .home-img-state {
-    font-size: clamp(1rem, 1vw, 2.3rem);
+    font-size: clamp(1rem, 1.2vw, 2.3rem);
   }
 
   .home-img-hobbies {
