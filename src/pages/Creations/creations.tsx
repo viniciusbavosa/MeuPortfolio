@@ -67,11 +67,19 @@ export default function Creations() {
 
           <div className="creations-list-wrapper">
             <div className="arrow-left-wrapper">
-              <button className="arrow-left-bttn" onClick={handleLeftClick}>
+              <button
+                className="arrow-left-bttn"
+                onClick={handleLeftClick}
+                title="Retornar"
+              >
                 <ArrowLeft />
               </button>
             </div>
-            <ul className="carousel" ref={carouselRef}>
+            <ul
+              className="carousel"
+              ref={carouselRef}
+              aria-label="Projetos de Vinícius Bavosa"
+            >
               {projects.map((p, index) => (
                 <li
                   key={index}
@@ -107,7 +115,11 @@ export default function Creations() {
               ))}
             </ul>
             <div className="arrow-right-wrapper">
-              <button className="arrow-left-bttn" onClick={handleRightClick}>
+              <button
+                className="arrow-left-bttn"
+                onClick={handleRightClick}
+                title="Avançar"
+              >
                 <ArrowRight />
               </button>
             </div>

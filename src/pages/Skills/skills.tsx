@@ -38,7 +38,10 @@ export default function Skills() {
         <div className="section-content-wrapper skills-content-wrapper">
           <h1 className="section-title creations-title">{mainTitle}</h1>
           <h2 className="section-subtitle creations-subtitle">{subtitle}</h2>
-          <ul className="skills-wrapper">
+          <ul
+            className="skills-wrapper"
+            aria-label="Lista de habilidades de Vinícius Bavosa"
+          >
             {skills.map((s, index) => (
               <li key={index} tabIndex={0} className="skill-item">
                 {s}

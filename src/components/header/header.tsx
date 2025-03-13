@@ -28,16 +28,19 @@ export default function Header() {
       name: "instagram",
       svg: <InstagramIcon width="64" height="64" />,
       path: "https://www.instagram.com/viniciusbavosa/",
+      ariaLabel: "Instagram",
     },
     {
       name: "linkedin",
       svg: <LinkedinIcon width="64" height="64" />,
       path: "https://www.linkedin.com/in/vinicius-bavosa",
+      ariaLabel: "Linkedin",
     },
     {
       name: "github",
       svg: <GithubIcon width="64" height="64" />,
       path: "https://github.com/viniciusbavosa",
+      ariaLabel: "Github",
     },
   ];
 
@@ -64,7 +67,12 @@ export default function Header() {
       <section className="social-section">
         <ul className="social-content-wrapper">
           {socialLinks.map((s, index) => (
-            <li key={index} className="social-item">
+            <li
+              key={index}
+              className="social-item"
+              title={s.ariaLabel}
+              aria-label={s.ariaLabel}
+            >
               <a
                 tabIndex={0}
                 aria-label={`${s.name}-icon`}
