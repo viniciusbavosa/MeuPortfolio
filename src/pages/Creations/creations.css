@@ -9,7 +9,6 @@
 .creations-list-wrapper ul {
   display: flex;
   align-items: center;
-  justify-content: safe;
   gap: 2rem;
   margin-block-end: 1rem;
   overflow-x: auto;
