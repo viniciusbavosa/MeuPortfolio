@@ -24,7 +24,7 @@ export default function Home() {
           <h1 className="section-title home-title">{mainTitle}</h1>
           <h2 className="section-subtitle home-subtitle">{subtitle}</h2>
 
-          <Link to={"/contact"} className="home-bttn">
+          <Link to={"/contact"} className="home-bttn" viewTransition>
             Entre em contato
           </Link>
           <div className="home-img-wrapper" tabIndex={0}>

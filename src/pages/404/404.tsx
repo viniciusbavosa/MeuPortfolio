@@ -10,7 +10,9 @@ export default function NotFound() {
         <div className="img-wrapper">
           <ToTheMoon />
         </div>
-        <Link to={"/"}>Voltar a página inicial</Link>
+        <Link to={"/"} viewTransition>
+          Voltar a página inicial
+        </Link>
       </section>
     </>
   );
