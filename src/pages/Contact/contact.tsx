@@ -20,6 +20,18 @@ export function Contact() {
       name: "Whatsapp",
       path: "https://wa.me/5538991168986",
     },
+    {
+      name: "Email",
+      path: "viniciusbavosa@outlook.com",
+      subject: "Oportunidade de colaboração",
+      body: encodeURIComponent(`
+          Olá Vinícius, 
+          
+          Vi seu portfólio e gostaria de conversar sobre uma possível colaboração. Podemos agendar uma conversa?
+
+          Agradeço
+        `),
+    },
   ];
   return (
     <>
@@ -31,7 +43,7 @@ export function Contact() {
             {social.map((s, i) => (
               <li key={i} className="contact-item">
                 <a
-                  href={s.path}
+                  href={`mailto:${s.path}?subject=${s.subject}&body=${s.body}`}
                   target="_blank"
                   rel="noreferrer, no opener"
                   className="contact-link"
