@@ -148,7 +148,7 @@ button {
 }
 
 .section-subtitle {
-  max-inline-size: min(50%, var(--measure));
+  max-inline-size: min(70%, var(--measure));
   padding-block: 1rem;
   text-align: center;
   font-size: clamp(1.125rem, 5vw, 2rem);
@@ -158,9 +158,5 @@ button {
 @container body (width < 950px) {
   .section-title {
     margin-block-start: 1rem;
-  }
-
-  .section-subtitle {
-    display: flex;
   }
 }

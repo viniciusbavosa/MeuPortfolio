@@ -1,5 +1,5 @@
 export default function Skills() {
-  const mainTitle = "Minhas tecnologias e Conhecimentos";
+  const mainTitle = "Minhas tecnologias e conhecimentos";
   const subtitle =
     "Domínio técnico e criatividade para construir soluções eficientes.";
 
