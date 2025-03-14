@@ -43,7 +43,11 @@ export function Contact() {
             {social.map((s, i) => (
               <li key={i} className="contact-item">
                 <a
-                  href={`mailto:${s.path}?subject=${s.subject}&body=${s.body}`}
+                  href={
+                    s.name != "Email"
+                      ? s.path
+                      : `mailto:${s.path}?subject=${s.subject}&body=${s.body}`
+                  }
                   target="_blank"
                   rel="noreferrer, no opener"
                   className="contact-link"
