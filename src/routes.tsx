@@ -5,6 +5,7 @@ import Creations from "~/pages/Creations/creations";
 import Skills from "~/pages/Skills/skills";
 import { Contact } from "~/pages/Contact/contact";
 import NotFound from "~/pages/404/404";
+import { Articles } from "./pages/Articles/articles";
 
 export const routes = createBrowserRouter([
   {
@@ -16,15 +17,15 @@ export const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/creations",
+        path: "/projetos",
         element: <Creations />,
       },
       {
-        path: "/skills",
+        path: "/habilidades",
         element: <Skills />,
       },
       {
-        path: "/contact",
+        path: "/contato",
         element: <Contact />,
       },
     ],

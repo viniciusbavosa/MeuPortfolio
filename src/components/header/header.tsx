@@ -11,15 +11,17 @@ export default function Header() {
     },
     {
       name: "Criações",
-      path: "/creations",
+      path: "/projetos",
     },
     {
       name: "Competências",
+      path: "/habilidades",
+    },
       path: "/skills",
     },
     {
       name: "Contato",
-      path: "/contact",
+      path: "/contato",
     },
   ];
 
