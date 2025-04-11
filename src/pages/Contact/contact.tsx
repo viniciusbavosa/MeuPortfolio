@@ -49,7 +49,7 @@ export function Contact() {
                       : `mailto:${s.path}?subject=${s.subject}&body=${s.body}`
                   }
                   target="_blank"
-                  rel="noreferrer, no opener"
+                  rel="noreferrer, noopener"
                   className="contact-link"
                 >
                   {s.name}
