@@ -156,7 +156,11 @@ button {
   font-weight: 300;
 }
 
-@container body (width < 950px) {
+@container body (width < 555px) {
+  .section-content-wrapper {
+    --section-padding: 0 4rem;
+  }
+
   .section-title {
     margin-block-start: 1rem;
   }

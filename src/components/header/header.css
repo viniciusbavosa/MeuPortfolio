@@ -119,6 +119,7 @@
 
   .hamburger {
     background-color: transparent;
+    position: absolute;
   }
 
   .hamburger::before,
