@@ -2,8 +2,10 @@ import InstagramIcon from "~/components/instagram-icon/instagram";
 import LinkedinIcon from "~/components/linkedin-icon/linkedin";
 import GithubIcon from "~/components/github-icon/github";
 import { Link } from "react-router-dom";
+import { useHeader } from "~/hooks/useHeader/useHeader";
 
 export default function Header() {
+  const { isOpen, toggleMenuState } = useHeader();
   const navLinks = [
     {
       name: "Início",
@@ -17,7 +19,9 @@ export default function Header() {
       name: "Competências",
       path: "/habilidades",
     },
-      path: "/skills",
+    {
+      name: "Artigos",
+      path: "/artigos",
     },
     {
       name: "Contato",
@@ -48,17 +52,34 @@ export default function Header() {
 
   return (
     <>
+      {/* Desktop Header */}
       <header className="header">
         <nav className="nav">
           <ul className="nav-items-wrapper">
             {navLinks.map((l, i) => (
               <li key={i} className="nav-item">
-                <Link
-                  to={l.path}
-                  viewTransition
-                  tabIndex={0}
-                  className="nav-link"
-                >
+                <Link to={l.path} viewTransition className="nav-link">
+                  {l.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <button
+        className={`${isOpen ? "open" : "closed"} menu-toggle`}
+        role="button"
+        onClick={toggleMenuState}
+      >
+        <div className="hamburger"></div>
+      </button>
+      {/* Mobile Header */}
+      <header className="header-mobile">
+        <nav className="nav nav-mobile">
+          <ul className="nav-items-wrapper">
+            {navLinks.map((l, i) => (
+              <li key={i} className="nav-item">
+                <Link to={l.path} viewTransition className="nav-link">
                   {l.name}
                 </Link>
               </li>
@@ -76,7 +97,6 @@ export default function Header() {
               aria-label={s.ariaLabel}
             >
               <a
-                tabIndex={0}
                 aria-label={`${s.name}-icon`}
                 href={s.path}
                 target="_blank"

@@ -1,5 +1,5 @@
 .header {
-  inline-size: min(50%, var(--long-measure));
+  inline-size: min(fit-content, var(--long-measure));
   background-color: var(--header-background-color);
   border-start-start-radius: 24px;
   border-start-end-radius: 24px;
@@ -14,6 +14,10 @@
 .nav {
   font-size: clamp(1rem, 4vw, 1.2rem);
   padding: 1.75rem;
+}
+
+.nav-mobile {
+  display: none;
 }
 
 .nav-items-wrapper {
@@ -71,21 +75,110 @@
   }
 }
 
-@container body (width < 950px) {
+/* Styles for mobile */
+@container body (width < 555px) {
   .header {
-    min-inline-size: fit-content;
-    top: 0;
-    bottom: initial;
+    display: none;
+  }
 
-    border-start-start-radius: 0;
-    border-start-end-radius: 0;
+  .header-mobile {
+    display: none;
+    min-inline-size: 100lvw;
+    top: 0;
+    right: 0;
+
+    position: absolute;
+    isolation: isolate;
+
+    transform: translateY(-100%);
+
+    transition-property: display transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+
+  .open + .header-mobile {
+    display: block;
+
+    transform: translateY(0);
+
+    @starting-style {
+      transform: translateY(-100%);
+    }
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    padding: 1.5rem 1rem;
+    border: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .hamburger {
+    background-color: transparent;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    display: block;
+    background-color: white;
+    inline-size: 1.75em;
+    block-size: 3px;
+    border-radius: 3px;
+    transition: all 200ms ease-in 100ms;
+  }
+
+  .hamburger::after {
+    transform: translateY(3px);
+  }
+
+  .open .hamburger::before {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+
+  .open .hamburger::after {
+    transform: translateY(-3px) rotate(45deg);
+
+    background-color: black;
+  }
+
+  .nav-mobile {
+    display: block;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
     border-end-start-radius: 24px;
     border-end-end-radius: 24px;
+
+    color: black;
+  }
+
+  .nav-items-wrapper {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    max-inline-size: fit-content;
+    margin: auto;
+    font-size: 1.5rem;
+  }
+
+  .nav-item::before {
+    background-color: black;
   }
 }
 
-@container body (max-width: 320px) {
-  .nav-items-wrapper {
-    font-size: 10px;
+@media (prefers-reduced-motion) {
+  .header-mobile {
+    transition: none;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    transition: none;
   }
 }
