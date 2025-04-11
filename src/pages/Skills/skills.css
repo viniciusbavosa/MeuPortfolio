@@ -58,6 +58,7 @@
 @container body (width < 580px) {
   .skills-wrapper {
     transform: perspective(5000px) rotateY(0) rotateX(0);
+    margin-block-end: 1rem;
   }
 
   .skills-wrapper::after {

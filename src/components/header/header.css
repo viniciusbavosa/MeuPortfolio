@@ -83,7 +83,7 @@
 
   .header-mobile {
     display: none;
-    min-inline-size: 100lvw;
+    min-inline-size: 100dvw;
     top: 0;
     right: 0;
 

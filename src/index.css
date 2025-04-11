@@ -158,7 +158,7 @@ button {
 
 @container body (width < 555px) {
   .section-content-wrapper {
-    --section-padding: 0 4rem;
+    --section-padding: 0 4rem 4rem 4rem;
   }
 
   .section-title {
