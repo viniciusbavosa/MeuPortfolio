@@ -1,0 +1,39 @@
+.articles-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  inline-size: min(100%, var(--long-measure));
+
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.article-item {
+  text-wrap: pretty;
+}
+
+.article-title {
+  font-size: clamp(1.125rem, 5vw, 2rem);
+  transition: 200ms ease;
+}
+
+.article-title:hover,
+.article-title:focus {
+  color: var(--primary-color);
+}
+
+.article-date {
+  color: #dfdfdf80;
+  cursor: default;
+  transition: 200ms ease;
+}
+
+.article-date:hover,
+.article-date:focus {
+  color: white;
+}
+
+@container body (width < 555px) {
+  .articles-list-wrapper {
+    text-align: center;
+  }
+}

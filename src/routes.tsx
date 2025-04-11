@@ -28,6 +28,10 @@ export const routes = createBrowserRouter([
         path: "/contato",
         element: <Contact />,
       },
+      {
+        path: "/artigos",
+        element: <Articles />,
+      },
     ],
   },
 ]);
