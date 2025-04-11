@@ -6,9 +6,10 @@ footer {
   padding: 1em;
   font-size: clamp(10px, 5vw, 14px);
   text-align: center;
+  text-wrap: pretty;
 }
 
-@container body (width < 950px) {
+@container body (width < 555px) {
   footer {
     top: initial;
     bottom: 0;

@@ -95,7 +95,7 @@ li:focus .creation-img-caption {
   cursor: pointer;
 }
 
-@container body (width < 1400px) {
+@container body (width < 1000px) {
   .creations-list-wrapper ul {
     flex-wrap: wrap;
     justify-content: center;
