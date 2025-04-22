@@ -1,7 +1,7 @@
 import InstagramIcon from "~/components/instagram-icon/instagram";
 import LinkedinIcon from "~/components/linkedin-icon/linkedin";
 import GithubIcon from "~/components/github-icon/github";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { useHeader } from "~/hooks/useHeader/useHeader";
 
 export default function Header() {

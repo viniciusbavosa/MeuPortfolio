@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { getData } from "~/helpers/fetch";
 
 interface articleData {
   canonical_url: string;
@@ -6,30 +7,24 @@ interface articleData {
   title: string;
   published_at: string;
 }
-export function Articles() {
-  const [articles, setArticles] = useState<articleData[]>([]);
 
+export function Articles() {
   const title = "Meus artigos";
   const subtitle = "Da comunidade, para a comunidade";
 
-  useEffect(() => {
-    const devtoURI = "https://dev.to/api/articles?username=viniciusbavosa";
+  const { data } = useSuspenseQuery<articleData[]>({
+    queryKey: ["articles"],
+    queryFn: () =>
+      getData("https://dev.to/api/articles?username=viniciusbavosa"),
+  });
 
-    const fetchAsync = async () => {
-      const response = await fetch(devtoURI);
-      const articleData: articleData[] = await response.json();
-      setArticles(articleData);
-    };
-
-    fetchAsync();
-  }, []);
   return (
     <>
       <section className="articles-section section-content-wrapper">
         <h1 className="section-title">{title}</h1>
         <h2 className="section-subtitle">{subtitle}</h2>
         <ul className="articles-list-wrapper">
-          {articles.map((a, i) => (
+          {data.map((a: articleData, i: number) => (
             <li key={i} className="article-item">
               <article className="article-wrapper">
                 <h1 className="article-title">
