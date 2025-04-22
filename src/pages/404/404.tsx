@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import ToTheMoon from "~/components/to-the-moon-icon/toTheMoon";
 
 export default function NotFound() {
