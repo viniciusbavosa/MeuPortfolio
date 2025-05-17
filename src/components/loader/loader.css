@@ -1,0 +1,9 @@
+.spinner-loader {
+  animation: rotateLoader 1.4s ease-out infinite;
+}
+
+@keyframes rotateLoader {
+  to {
+    rotate: 360deg;
+  }
+}
