@@ -14,6 +14,10 @@ footer {
     top: initial;
     bottom: 0;
   }
+
+  span {
+    display: block;
+  }
 }
 
 @container body (max-width: 320px) {
