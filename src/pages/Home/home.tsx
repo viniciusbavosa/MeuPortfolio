@@ -7,16 +7,6 @@ export default function Home() {
   const subtitle =
     " De Minas Gerais, escrevendo código e contando histórias digitais.";
 
-  const myInfo = [
-    {
-      name: "Vinícius M. Bavosa",
-      age: "26 anos",
-      location: "Pirapora, Minas Gerais",
-      hobbies:
-        "Gosto de estudar música, jogar RPGs e desenvolver aplicações úteis para o meu dia a dia.",
-    },
-  ];
-
   return (
     <>
       <section className="home-section">
@@ -28,16 +18,6 @@ export default function Home() {
             Entre em contato
           </Link>
           <div className="home-img-wrapper">
-            <div className="home-img-text-wrapper">
-              {myInfo.map((info, index) => (
-                <ul key={index}>
-                  <li className="home-img-name">{info.name}</li>
-                  <li className="home-img-state">{info.location}</li>
-                  <li className="home-img-age">{info.age}</li>
-                  <li className="home-img-hobbies">{info.hobbies}</li>
-                </ul>
-              ))}
-            </div>
             <img
               src={YellowBG}
               width={400}
