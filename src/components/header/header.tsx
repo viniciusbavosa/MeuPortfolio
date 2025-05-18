@@ -3,7 +3,7 @@ import LinkedinIcon from "~/components/linkedin-icon/linkedin";
 import GithubIcon from "~/components/github-icon/github";
 import { Link } from "@tanstack/react-router";
 import HamburguerMenu from "~/components/hamburguer/hamburguer-menu";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
