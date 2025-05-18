@@ -1,0 +1,50 @@
+@container body (width < 555px) {
+  .menu-toggle {
+    display: block;
+
+    position: absolute;
+    padding: 1.5rem 1rem;
+    border: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .hamburger {
+    background-color: transparent;
+
+    position: absolute;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    display: block;
+    background-color: white;
+    inline-size: 1.75em;
+    block-size: 3px;
+    border-radius: 3px;
+    transition: all 200ms ease-in 100ms;
+  }
+
+  .hamburger::after {
+    transform: translateY(3px);
+  }
+
+  .open .hamburger::before {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+
+  .open .hamburger::after {
+    transform: translateY(-3px) rotate(45deg);
+
+    background-color: black;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .hamburger::before,
+  .hamburger::after {
+    transition: none;
+  }
+}

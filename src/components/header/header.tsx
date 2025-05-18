@@ -2,10 +2,14 @@ import InstagramIcon from "~/components/instagram-icon/instagram";
 import LinkedinIcon from "~/components/linkedin-icon/linkedin";
 import GithubIcon from "~/components/github-icon/github";
 import { Link } from "@tanstack/react-router";
-import { useHeader } from "~/hooks/useHeader/useHeader";
+import HamburguerMenu from "~/components/hamburguer/hamburguer-menu";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
-  const { isOpen, toggleMenuState } = useHeader();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenuState = () => setIsOpen(!isOpen);
+
   const navLinks = [
     {
       name: "Início",
@@ -52,7 +56,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Desktop Header */}
       <header className="header">
         <nav className="nav">
           <ul className="nav-items-wrapper">
@@ -66,20 +69,19 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-      <button
-        className={`${isOpen ? "open" : "closed"} menu-toggle`}
-        role="button"
-        onClick={toggleMenuState}
-      >
-        <div className="hamburger"></div>
-      </button>
-      {/* Mobile Header */}
+
+      <HamburguerMenu menuState={isOpen} setMenuStateFn={toggleMenuState} />
       <header className="header-mobile">
-        <nav className="nav nav-mobile">
+        <nav className="nav-mobile">
           <ul className="nav-items-wrapper">
             {navLinks.map((l, i) => (
               <li key={i} className="nav-item">
-                <Link to={l.path} viewTransition className="nav-link">
+                <Link
+                  to={l.path}
+                  viewTransition
+                  className="nav-link"
+                  onClick={toggleMenuState}
+                >
                   {l.name}
                 </Link>
               </li>
@@ -87,6 +89,7 @@ export default function Header() {
           </ul>
         </nav>
       </header>
+
       <section className="social-section">
         <ul className="social-content-wrapper">
           {socialLinks.map((s, index) => (
